@@ -13,7 +13,7 @@ router.get('/:id', ItemCategoryControllers.getItemCategoryById);
 
 router.post(
   '/',
-  auth(USER_ROLE.ADMIN),
+  auth(USER_ROLE.ADMIN, USER_ROLE.USER),
   validateRequest(ItemCategoryValidation.createItemCategoryValidationSchema),
   ItemCategoryControllers.createItemCategory
 );
